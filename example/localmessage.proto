@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package fixbug;
+
+
+message Msg{
+    int32 userid = 1;
+    bytes username = 2;
+    bytes msg = 3;
+    int64 time = 4;
+}
