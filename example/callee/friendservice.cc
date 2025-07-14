@@ -33,6 +33,17 @@ public:
         }
         done->Run();
     }
+    void Addfriend(::google::protobuf::RpcController *controller,
+                        const ::fixbug::AddfriendRequest *request,
+                        ::fixbug::AddfriendResponse *response,
+                        ::google::protobuf::Closure *done)
+    {
+        mysqlpool.addFrient(request->userid(),request->friendid());
+        response->mutable_result()->set_errcode(0);
+        response->mutable_result()->set_errmsg("添加成功");
+        done->Run();
+    }
+
 
 private:
     MysqlModel mysqlpool;

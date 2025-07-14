@@ -49,18 +49,19 @@ int main(int argc, char **argv)
         std::cin.ignore(); // 清除换行符
         switch (choice)
         {
-        case 1:
+        case 1://向好友发送消息
             send_chatmsg(client);
             break;
-        case 2:
+        case 2://向群发送消息
             send_groupmsg(client);
             break;
-        case 3:
+        case 3://创建群
             client.createGroup();
             break;
-        case 4:
+        case 4://加入群
             addGroup(client);
             break;
+        
         default:
             break;
         }
@@ -71,10 +72,11 @@ int main(int argc, char **argv)
 
 void addGroup(RpcClient &client){
     int groupid;
-    std::cout << "输入好友ID: ";
+    std::cout << "输入想加入群的ID: ";
     std::cin >> groupid;
     std::cin.ignore(); // 清除换行符
     client.joingroup(groupid);
+    std::cout<<"加入成功"<<std::endl;
 }
 void send_chatmsg(RpcClient &client){
     int friendid;

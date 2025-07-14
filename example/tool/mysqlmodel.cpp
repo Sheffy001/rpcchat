@@ -25,9 +25,7 @@ void MysqlModel::insertOffline(int userid, std::string msg)
     conn->getConnection()->update(sql);
 }
 // void insertUser(fixbug::ChatMessage msg);
-void MysqlModel::addfriend(int userid, int friendid, int method)
-{
-}
+
 std::vector<fixbug::Friends> MysqlModel::getFriends(int userid)
 {
     std::vector<fixbug::Friends> friends;
@@ -158,4 +156,17 @@ int MysqlModel::getOnline(int userid)
         return atoi(row[0]);
     }
     return -1;
+}
+
+void MysqlModel::addFrient(int userid,int friendid){
+    char find[1024] = {0};
+    std::shared_ptr<Connection> coo = conn->getConnection();
+    sprintf(find, "select * from friendship where userid = %d and friend_userid = %d ", userid,friendid);
+    if(coo->query(find)!=nullptr)return;
+    char sql[1024] = {0};
+    char sql2[1024] = {0};
+    sprintf(sql, "insert into friendship(userid,friend_userid) values(%d, %d) ", userid,friendid);
+    sprintf(sql2, "insert into friendship(userid,friend_userid) values(%d, %d) ", friendid,userid);
+    coo->update(sql);
+    coo->update(sql2);
 }

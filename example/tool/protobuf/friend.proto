@@ -20,10 +20,18 @@ message GetFriendsListResponse
     ResultCode result = 1;
     repeated Friends friends = 2;
 }
+message AddfriendRequest{
+    int32 userid = 1;
+    int32 friendid = 2;
+}
+message AddfriendResponse{
+    ResultCode result = 1;
+}
 
 
 // 好友模块
 service FiendServiceRpc
 {
     rpc GetFriendsList(GetFriendsListRequest) returns(GetFriendsListResponse);
+    rpc AddFriend(AddfriendRequest) returns(AddfriendResponse);
 }

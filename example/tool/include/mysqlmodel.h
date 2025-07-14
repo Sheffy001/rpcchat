@@ -8,7 +8,6 @@ public:
     void updateStatus(int userid,int statue);
     void insertOffline(int userid,std::string msg);
     bool insertUser(int userid,std::string name,std::string pwd);
-    void addfriend(int userid,int friendid,int method);
     std::vector<fixbug::Friends>getFriends(int userid);
     bool addGroup(int userid,int groupid);
     int insertGroup(fixbug::groupInfo info);
@@ -17,8 +16,7 @@ public:
     void getGroup(int userid,std::vector<fixbug::groupInfo>&v);
     int getOnline(int userid);
     std::vector<std::string> getOfflinemsg(int userid);
-
-
+    void addFrient(int userid,int friendid);
     void getAllgroup(std::vector<int>&v);
 private:
     ConnectPool* conn = ConnectPool::getInstance();
