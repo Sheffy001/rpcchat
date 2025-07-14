@@ -8,7 +8,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 include_directories(${PROJECT_SOURCE_DIR}/src/include)
-include_directories(${PROJECT_BINARY_DIR}/example)
+include_directories(${PROJECT_SOURCE_DIR}/example/tool/include)
 
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 

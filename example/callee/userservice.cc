@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
-#include "../user.pb.h"
+#include "user.pb.h"
 #include "mprpcapplication.h"
 #include "rpcprovider.h"
-#include "../CommonConnectionPool.h"
-#include "../mysqlmodel.h"
+#include "CommonConnectionPool.h"
+#include "mysqlmodel.h"
 /*
 UserService原来是一个本地服务，提供了两个进程内的本地方法，Login和GetFriendLists
 */

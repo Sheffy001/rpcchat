@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/rpcgroup.dir/groupservice.cc.o -o ../../../bin/rpcgroup   -L/home/sheffy/CppProject/RPCCHAT/rpcchat/lib  -Wl,-rpath,/home/sheffy/CppProject/RPCCHAT/rpcchat/lib ../../../lib/libmprpc.a ../../../lib/libtools.a ../../../lib/libmprpc.a -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt -lprotobuf -lmysqlclient -lhiredis -lsqlite3 

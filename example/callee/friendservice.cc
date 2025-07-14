@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
-#include "../friend.pb.h"
+#include "friend.pb.h"
 #include "mprpcapplication.h"
 #include "rpcprovider.h"
 #include <vector>
 #include "logger.h"
-#include "../mysqlmodel.h"
+#include "mysqlmodel.h"
 class FriendService : public fixbug::FiendServiceRpc
 {
 public:

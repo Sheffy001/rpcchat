@@ -1,0 +1,53 @@
+syntax = "proto3";
+import "public.proto";
+import "chatservice.proto";
+package fixbug;
+
+option cc_generic_services = true;
+
+message createGroupRequest{
+    int32 userid  = 1;
+    int64 createTime = 2;
+}
+message createGroupResponse{
+    int32 groupid  = 1;
+}
+
+message AddGroupRequest{
+    int32 userid = 1;
+    int32 groupid = 2;
+}
+message AddGroupResponse{
+    ResultCode result = 1;
+}
+
+message SendMessageRequest{
+    int32 userid = 1;
+    GroupMessage msg = 3;
+}
+message SendMessageResponse{
+    ResultCode result = 1;
+}
+
+message groupInfo{
+    int32 groupid = 1;
+    int32 adminid = 2;
+    int64 createTime = 3;
+    int32 usersnum = 4;
+}
+
+message getGroupRequest{
+    int32 userid = 1;
+}
+message getGroupResponse{
+    repeated groupInfo group = 1;
+}
+
+
+
+service RpcGroupChat{
+    rpc AddGroup(AddGroupRequest) returns(AddGroupResponse);
+    rpc SendMsg(SendMessageRequest) returns(SendMessageResponse);
+    rpc GetGroup(getGroupRequest)returns(getGroupResponse);
+    rpc createGroup(createGroupRequest)returns(createGroupResponse);
+} 

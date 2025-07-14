@@ -1,8 +1,8 @@
-#include "../group.pb.h"
+#include "group.pb.h"
 #include "mprpcapplication.h"
 #include "rpcprovider.h"
-#include"../redis.hpp"
-#include"../mysqlmodel.h"
+#include"redis.hpp"
+#include"mysqlmodel.h"
 
 class GroupChat : public fixbug::RpcGroupChat
 {

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package fixbug;
+
+option cc_generic_services = true;
+
+
+message ChatMessage{
+    int32 method = 1;
+    int32 userid = 2;
+    int32 friendid = 3;
+    bytes friendname = 4;
+    bytes msg = 5;
+    int64 send_time = 6;
+}
+message GroupMessage{
+    int32 method = 1;
+    int32 groupid = 3;
+    int32 memberid = 4;
+    bytes membername = 5;
+    bytes msg = 6;
+    int64 send_time = 7;
+}
+

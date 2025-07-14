@@ -1,5 +1,5 @@
 #include"iostream"
-#include"../chatserver.h"
+#include"chatserver.h"
 
 
 int main(int argc,char** argv){
